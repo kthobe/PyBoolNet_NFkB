@@ -1,0 +1,19 @@
+# model in BoolNet format
+# the header targets, factors is mandatory to be importable in the R package BoolNet
+
+# targets, factors
+IkBa,      !NEMO_IKK | NEMO_IKK&RelA_p50n
+IkBd,      !NIK_IKKa&p100_b1&p100_b2
+LTbR,      LTbR
+NEMO_IKK,  TRAF2_b1&TRAF2_b2
+NIK_IKKa,  !TRAF3
+RelA_p50c, !IkBa&!IkBd
+RelA_p50n, RelA_p50c
+RelB_p52,  p100p
+TNFR,      TNFR
+TRAF2_b1,  !TNFR&!LTbR | !TNFR&LTbR&TRAF2_b1&TRAF2_b2 | TNFR
+TRAF2_b2,  TNFR&TRAF2_b1
+TRAF3,     TRAF2_b1
+p100_b1,   1
+p100_b2,   RelA_p50n&p100_b1
+p100p,     NIK_IKKa&p100_b1
